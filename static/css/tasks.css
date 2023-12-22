@@ -1,0 +1,57 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url(/static/images/city-digital-light-design-wallpaper-preview.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    
+  }
+  
+  .container {
+    
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  h1 {
+    font-size: 3em;
+    color: #333;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 1.5em;
+    color: #666;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2em;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  table, th, td {
+    border: 1px solid #dddddd;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #333;
+    color: #fff;
+  }

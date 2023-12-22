@@ -1,0 +1,49 @@
+{% extends "main_base.html" %}
+{% if user.is_authenticated %}
+ 
+      
+
+{% block content %}
+
+
+
+    <div class="container">
+
+        <table>
+
+          <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Priority</th>
+            <th>Created At</th>
+            <th>Status</th>
+          </tr>
+          
+            {% for i in user_projects  %}
+           
+            
+ 
+            <tr> 
+                <td>{{ i.id }}<br></td>
+                <td>{{ i.user }}<br></td>
+                <td><a href="{% url 'project_detail' i.pk %}">
+                    {{i.title_project}}
+</a></td>
+                <td>{{ i.description }}<br></td>
+                <td>{{ i.due_date }}<br></td>
+                <td>{{ i.priority }}<br></td>
+                <td>{{ i.created_at }}<br></td>
+                <td>{{ i.is_done }}<br></td>
+            </tr>
+
+
+        {% endfor %} 
+        </table>
+      </div>
+      <div class="test" style="display: flex; flex-direction:row"><h1>{{title_project}}</h1></div>
+      
+{% endblock content %}  
+{% endif %}

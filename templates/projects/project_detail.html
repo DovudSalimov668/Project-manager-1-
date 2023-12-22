@@ -1,0 +1,78 @@
+{% extends "main_base.html" %}
+{% block content %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+
+     
+  }
+  h1 {
+    text-align: center;
+    color: #75bcb4;
+    text-shadow: 2px 2px 4px #000000;
+  }
+  table {
+    margin: 20px auto;
+    background-color: rgba (255, 255, 255, 0.5);
+    border: 2px solid #bc7592;
+    border-collapse: collapse;
+    width: 80%;
+    
+  }
+  th, td {
+    border: 1px solid #bc7584;
+    padding: 8px;
+    text-align: center;
+  }
+  th {
+    background-color: #7b75bc;
+    color: white;
+  }
+  tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.3); 
+  }
+  .edit-link {
+    display: block;
+    width: 500px;
+    padding: 10px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #bc75a7;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #000000;
+  }
+  .edit-link:hover {
+    background-color: #4e8f82;
+  }
+</style>
+</head>
+<body>
+  <h1>Project Details</h1>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Owner</th>
+      <th>Title</th>
+      <th>Priority</th>
+      <th>Due Date</th>
+      <th>Status</th>
+      <th>Created At</th>
+    </tr>
+    <tr>
+      <td>{{ project.id }}</td>
+      <td>{{ project.user }}</td>
+      <td>{{ project.title_project }}</td>
+      <td>{{ project.priority }}</td>
+      <td>{{ project.due_date }}</td>
+      <td>{{ project.is_done }}</td>
+      <td>{{ project.created_at }}</td>
+    </tr>
+  </table>
+  <a href="{% url 'project_edit' project.pk %}" class="edit-link">Edit this project?</a>
+  <li><a href="{% url 'project_tasks'  project.pk %}" class="edit-link">Tasks</a></li>
+  <li><a href="{% url 'task_options'  %}" class="edit-link">Add Task</a></li>
+</body>
+         
+{% endblock content %}     

@@ -1,0 +1,37 @@
+.container {
+  margin: 20px;
+  padding:20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 25%;
+  background-color: rgba(216, 164, 164, 0.7); 
+
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+
+th {
+  background-color: rgba(206, 164, 216, 0.7);
+}
+
+.test {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgba(216, 164, 164, 0.7); 
+  color: rgb(226, 213, 215);
+}

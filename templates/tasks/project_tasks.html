@@ -1,0 +1,51 @@
+
+
+
+{% extends "main_base.html" %}
+
+      {% if user.is_authenticated %}
+ 
+      
+
+{% block content %}
+
+
+
+    <div class="container">
+
+        <table>
+
+          <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Priority</th>
+            <th>Due Date</th>
+            <th>Created At</th>
+            <th>Status</th>
+            <th>Project</th>
+          </tr>
+        
+            {% for project_task in project_tasks %}
+            
+            <tr>  
+                <td>{{ project_task.id }}<br></td>
+                <td>{{ project_task.user }}<br></td>
+                <td><a href="{% url 'task_edit' project_task.pk %}">{{project_task.title_task}}</a></td>
+                <td>{{ project_task.description }}<br></td>
+                <td>{{ project_task.priority }}<br></td>
+                <td>{{ project_task.due_date }}<br></td>
+                <td>{{ project_task.created_at }}<br></td>
+                <td>{{ project_task.is_done }}<br></td>
+                <td>{{ project_task.project }}<br></td>
+            </tr>
+          
+     
+        {% endfor %} 
+        </table>
+      </div>
+       
+{% endblock content %}  
+{% endif %}
+

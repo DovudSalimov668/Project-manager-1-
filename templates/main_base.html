@@ -1,0 +1,45 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/tasks.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/projects.css' %}">
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+  </div>
+<body>
+    <nav>
+        <ul style="display: flex; flex-direction: column-reverse;">
+            <li><a href="{% url 'base' %}">Home</a></li>
+            
+            {% if user.is_authenticated %}
+                
+                <li><a href="{% url 'whole_projects' %}">Projects</a></li>
+                <li><a href="{% url 'rest_logout' %}?next=/"> Logout</a></li>
+                <li><a href="{% url 'projects_options' %}">Add Project</a></li>
+                
+                <p style="color: rgb(164, 186, 206); text-align: left; margin-left: 20px;">Hi {{user.username}}!</p>
+            {% else %}
+                <li><a href="{% url 'rest_login' %}">Log in</a></li>
+                <li><a href="{% url 'rest_register' %}">Sign Up</a></li>
+                <p>You are not logged in</p>
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="content">
+      
+  {% block content  %} 
+
+
+    {% endblock content %}
+    </div>
+</body>
+</html>
